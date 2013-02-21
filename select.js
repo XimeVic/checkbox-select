@@ -61,7 +61,7 @@ if(typeof Array.prototype.filter !== 'function'){
 
 (function(){
     var context = this;
-    var $ = typeof('KISSY') !== 'undefined' ? KISSY.Node : context.$;
+    var $ = window.jQuery ||  context.$;
     function extend(target, src){
         for(var key in src) {
             if(src.hasOwnProperty(key)) {

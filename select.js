@@ -278,11 +278,14 @@ window.onload = function(){
                 select.selectAll();
                 break;
         case target.hasClass('list-title'):
+        case target.hasClass('list-length'):
             var node = document.getElementById(target.attr('data-target'));
-            if(target.attr('selected') !== '1'){
+            if(target.attr('selected') !== 'selected'){
                 select.selectAll(node);
+                target.attr('selected', 'selected');
             }else{
                 select.unSelectAll(node);           
+                target.removeAttr('selected');
             }
             break;
         }
